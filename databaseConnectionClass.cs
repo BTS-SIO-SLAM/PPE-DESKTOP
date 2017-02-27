@@ -44,6 +44,23 @@ class DatabaseConnect
         password = Apassword;
         database = Adatabase;
     }
+    public void ConnectionLandP(string anuid, string apassword)
+    {
+        try
+        {
+            
+            password = Apassword;
+            uid = anuid;
+            connectionString = "Data Source=" + server + ";" + "Initial Catalog=" + database + ";" + "User id=" + uid + ";" + "Password=" + password + ";";
+            connection = new SqlConnection(connectionString);
+            OpenConnection();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        
+    }
 
     public void SetConnection(string connectionString)
     {
@@ -271,6 +288,8 @@ class DatabaseConnect
         }
 
 
+
+
     }
 
     //Select without preparated statement
@@ -335,4 +354,51 @@ class DatabaseConnect
 
     }
 
+    public void UpdatePassword(String numUtilisateur, String newPassword)
+    {
+
+        try
+        {
+            OpenConnection();
+            SqlCommand dbCommand = new SqlCommand("UPDATE utilisateur SET passwordUtilisateur = '@passwordUtilisateur' WHERE numUtilisateur = @numUtilisateur", connection);
+            
+            dbCommand.Parameters.AddWithValue("@passwordUtilisateur", newPassword);
+            dbCommand.Parameters.AddWithValue("@nomOld", numUtilisateur);
+            dbCommand.Prepare();
+
+            dbCommand.ExecuteNonQuery();
+
+            CloseConnection();
+        }
+
+        catch (Exception e)
+        {
+            CloseConnection();
+            Console.WriteLine(e.Message);
+        }   
+    }
 }
+
+class program jesse  
+    {   
+        static void main (string[] args)
+        {
+        AjouterUser(Jean, Michel, mail);
+        AjouterStructure(Nokia, email, téléphone);
+        } 
+    
+
+
+
+         public void AjouterUser(Nom, prénom, email)
+        {
+        DatabaseConnect(connectionString);
+        insert (Nom, prénom, email);
+        }
+
+        public void AjouterStructure(Nom,email, téléphone)
+        {
+        DatabaseConnect(connectionString);
+        insert(Nom,email, téléphone);
+        }
+    }

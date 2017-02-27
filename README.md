@@ -4,13 +4,13 @@
 ## Informations sur le projet
 Groupe :  	LHUILLIER, SAILLY, DULONG, DELBE, COUTROT, DUPARC, ROBERTO, CANAVAGGIO 
 
-Nom du projet :  	BTAD ? GPE ? GEPEV ? GEPLEV ?
+Nom du projet :  	 GEPEV 
 
 Type de document :  	Cahier des charges  
 
-Version :  	2.0
+Version :  	1.3
 
-Référence :  	BTAD-CDC-0.0
+Référence :  	GPEV-CDC-1.3
 
 Statut du document :  	Livré
 
@@ -44,7 +44,7 @@ L'utilisateur se verra attribué aupparavant un couple login/mdp pour la connect
 Selon les droits, le planning du commercial ou la liste des commerciaux ou la liste des utilisateurs et leurs types seront affichés à l'acceuil de l'application et des boutons situés en haut de page permettront l'accès aux fonctionnalités respectives des utilisateurs :
 
 
-- Création des rendez-vous avec les clients qui se trouvent dans les portefeuilles.
+- Création des ren3dez-vous avec les clients qui se trouvent dans les portefeuilles.
 - Consulation des plannings de rendez-vous et leur gestion (ajouter/modifier/supprimer)
 - Consultation et/ou impression en pdf d'un récapitulatif de rendez-vous avec les informations nécéssaires (accès, commentaire, etc)
 - Gestion des périodes d'indisponibilité des commerciaux.
@@ -163,99 +163,127 @@ Les administrateurs auront accès à leurs outils de gestion des utilisateurs su
 
 // TODO à définir
 
-2.10 Documentation accessible depuis l'application
+2.7 Documentation accessible depuis l'application
 
 Un bouton "Aide" sera accessible sur chaque page de l'application dans le coin haut droite et délivrera une documentation pdf en fonction des droits des utilisateurs.
  
 
 ### 3. PRÉCONISATIONS GÉNÉRALES
  
+
 3.1 Charte graphique et navigation
-    
-    - L'application devra être 100% responsive pour tablettes et téléphonnes.
-    
-    - L'application doit être intuitive et simple d'utilisattion
-    
- 
+
+•	L'application devra être responsive pour tablettes et téléphones.
+•	L'application doit être intuitive et simple d'utilisation.
+•	L’accès aux informations et aux outils doit être rapide.
+
+
 3.2 Développement
-    
-    - Le code devra être le plus claire et simple possible.
-    
-    - Minimiser le junk code.
-    
-    - Chaque développeur se vera attribuer une charge de développement précise.
- 
+
+•	Il a été choisi de développer en C# sous VisualStudio et d’utiliser une base de donnée SQLserver ou MySQL d’après les compétences des développeurs du projet.
+•	Le C# est un langage de programmation commercialisé par Microsoft utilisé pour développer des applications Web et de bureau. Tous les développeurs possèdent des licences VisualStudio, l’environnement de de développement C#.
+•	MySQL  est un système de gestion de bases de données relationnelles (SGBDR). Il est distribué sous une double licence GPL et propriétaire. Il fait partie des logiciels de gestion de base de données les plus utilisés au monde.
+•	Microsoft SQL Server est un système de gestion de base de données (abrégé en SGBD) développé et commercialisé par la société Microsoft. Il fonctionne sous les OS Windows, Linux, Mac OS (non natif)
+
+Le code devra être le plus claire et simple possible.
+Développer en suivant les bonnes pratiques et minimiser l'utilisation de Library externes sera minimisé et les bonnes pratiques seront une priorité.
+Le développement est collaboratif : Le projet est partagé sur l’outil GitHub, ainsi chaque développeur peut fournir du travail et le remonter sur un dossier commun à tous.
+
+
 3.3 Matériels et compétences
-    
-    - Un Windows Server 2012 comportant MySQl et SQLserver.
-    
-    - Une virtualisation des serveurs WEB peut avoir lieu pour mettre en place un environement de PREPROD et PROD (apache virtualisation).
-    
-    - PC pouvant faire fonctionner visualStudio.
+
+•	Connaissances en C#, Visual Studio Windows Forms et langage SQL.
+•	Environnement Windows ou Mac récent (Vista min.)
+•	Un serveur avec l'OS Windows Server 2012 comportant MySQl et SQLserver ouvert à internet.
+•	Visual Studio (min. 2010)
+
 
 3.4 Sécurité
-    - Toute les requêtes devront être des requêtes préparées. 
-   
-    - Une obfuscation du code peut être abordée.
-   
-    - Chaque accès devra s'éffectuer par mot de passe hacher en SHA-256() OU MD5().
-   
-    - Chaque droit des utilisateurs doit être clairement délimité.
-   
-    - Les administrateurs ont une vue sur les actions éfféctuées sur les données.
-   
-    - Un pentest peut être éfféctué une fois l'application terminée.
-   
-    - Historique des connexions.
-   
-    - Fonction mot de passe brûlé après 6 tentativers infructueuses.
 
- 
+•	Toutes les requêtes devront être préparées pour éviter les injections SQL.
+•	Une offuscation du code peut être abordée.
+•	Chaque accès devra s'effectuer par mot de passe haché en SHA-256 OU MD5 avec salage.
+•	Les utilisateurs possèdent différents types de droits.
+•	Les administrateurs possèdent une vue sur les actions effectuées en base de données.
+•	Un Pentest peut être effectué une fois l'application terminée.
+•	Historique des connexions.
+•	Fonction mot de passe brûlé après 6 tentatives infructueuses.
+
+
 ### 4. DÉROULEMENT DU PROJET
- 
+
+
 4.1 Phases du projet
- 
+
+Le projet démarrera après la rédaction du cahier des charges.
+L'étape suivante consiste à répartir les différentes tâches, qui composent le projet, avec chacun des participants, qui démarreront sur une même base. 
+Suite à la conception (réalisation) de ces tâches, chaque développeur validera le travail effectué par tous les membres du groupe de travail. 
+Ensuite, la phase d'assemblage des parties, préalablement approuvées par les participants, devra se faire avec une possible différenciation entre participants suivant les opinions de chacun (finition individuelle).
+Chaque participant devra alors effectuer les tests et les éventuelles corrections nécessaires.
+La dernière étape est le déploiement du projet sur un serveur ainsi qu’un test final de production. 
+L’étape additionnelle facultative sera d’ajouter des améliorations à l’application.
+
+
 4.1.1 Conception
 
+•	Rédaction du cahier des charges.
+•	Création du Modèle conceptuel de données
+•	Création du Schéma UML
+•	Répartition et assignation des différentes tâches du projet.
+
+
 4.1.2 Réalisation
+
+•	Tous les développeurs partent sur une même base.
+•	Développement de l’interface et des fonctionnalités.
+•	Assemblage des différentes parties.
+
+
 
 4.1.3 Recette
 
 Phase de test permettant
-
 Vérification des fonctionnalités, de l’algorithme, de l’interface utilisateurs (ergonomie)
+
 
 4.1.4 Déploiement
 
-Basculer de la réalisation à la production, avec des procédures de retour en arrière, les tests de validité de comportement de l’application avec l’identification des risques possibles.
-
-4.1.5 Exploitation // a assigner --> Lorenzo
+Basculer de la réalisation à la production, avec des procédures de retour en arrière, des tests de validité de comportement de l’application et l’identification des risques possibles.
 
 
 ### 5. MODALITÉS
- 
+
+
 5.1 Réception des résultats des prestations
-                                                                                   
+
+
 5.2. Livrables
 
-5.3 Recettage
--> Cela consiste à effectuer une check list pour le point ergonomique et une pour le point technique afin de valider une version définitive et durable de l'application produite.
+
+5.3 Recettage 
+
+ Cela consiste à effectuer une check List pour le point ergonomique et une pour le point technique afin de valider une version définitive et durable de l'application produite.
  
-5.3.1 Au niveau technique
--> Check List :
- - l'application fonctionne t'elle ? Tout le cahier des charges est-il mis en place et fonctionnel ?
- - l'application est-elle adaptée à son environnement de déploiement, ici un PC sous windows ?
- - l'application est-elle fonctionnelle sur d'autres versions de windows que celle utilisée pour la développer ?
- - l'application comporte-elle une documentation technique ?
+ 
+5.3.1 Au niveau technique 
 
-5.3.2 Au niveau ergonomique
--> Check List :
- - l'application est-elle facilement compréhensible pour une prise en mains rapide ?
- - l'application permet-elle un accès efficace aux données ?
- - l'application est-elle visuellement agréable ?
- - la fenêtre de l'application est-elle redimensionnable (le contenu y compris) ?
+Check List :
+•	L’application fonctionne-t-elle ? Tout le cahier des charges est-il mis en place et fonctionnel ?
+•	L’application est-elle adaptée à son environnement de déploiement, ici un PC sous Windows ?
+•	L’application est-elle fonctionnelle sur d'autres versions de Windows que celle utilisée pour la développer ?
+•	L’application comporte-elle une documentation technique ?
 
-## Diffusion	   
+
+5.3.2 Au niveau ergonomique 
+
+Check List :
+•	L’application est-elle facilement compréhensible pour une prise en mains rapide ?
+•	L’application permet-elle un accès efficace aux données ?
+•	L’application est-elle visuellement agréable ?
+•	La fenêtre de l'application est-elle redimensionnable (le contenu y compris) ?
+
+## Diffusion	
+
 LHUILLIER JESSIE  lhuillier14@gmail.com  Dév.	   
 
 DUPARC ALEXANDRE duparc.alexandre94@gmail.com Dév.
@@ -271,12 +299,3 @@ COUTROT SYLVAIN	sylvain.coutrot@hotmail.fr Dév.
 CANAVAGGIO LORENZO lorenzo.canavaggio@laposte.net Dév.
 
 SAILLY AXELLE saillyaxelle@hotmail.fr Dév.
-
-Historique	 des révisions du document
-  
-0.0.0	16/01/2017	CANAVAGGIO	Initialisation
-0.1.1	17/01/2017	DULONG	   	Mise en forme, déploiement sur github
-0.1.2	17/01/2017	SAILLY	   	Corrections mineures
-0.1.3 18/01/2017	SAILLY	   	Remplissage de la partie "Recettage"
-0.1.3 20/01/2017 ROBERTO    Remplissage de la partie "Visualisation des e-mails" et "Gestion des utilisateurs"
-0.1.4 19/01/2017 CANAVAGGIO Remplissage de ma partie.
