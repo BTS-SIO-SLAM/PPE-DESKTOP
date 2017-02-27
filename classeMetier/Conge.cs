@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PPE_Belle_Table_Classes_métier
+namespace BelleTable.Conges
 {
     class Conge
     {
