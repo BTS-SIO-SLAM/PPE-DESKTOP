@@ -62,4 +62,6 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 
-planning/* linguist-vendored
+PPE-DESKTOP/planning/* linguist-vendored
+PPE-DESKTOP/Maquette_Belle_Table_Final/Maquette_Belle_Table_Final/planning/* linguist-vendored
+
