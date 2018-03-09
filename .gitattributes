@@ -62,4 +62,4 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 
-PPE-DESKTOP/planning/* linguist-vendored
+planning/* linguist-vendored
